@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Critter Carnage
+    </title>
+  </head>
+  <body>
+    <img id="image1" src="http://i.imgur.com/QGxPCTL.jpg" width="62%" height="62%">
+    <script>
+      document.getElementById("image1").addEventListener("load", function() {
+
+        function Critter(name, speed, focus) {
+          this.name = name;
+          this.speed = speed;
+          this.focus = focus;
+          this.position = 0;
+          this.race = function() {
+            this.position += (Math.random() * this.speed * (this.focus/10)) ;
+          }
+        }
+
+        var rabbit = new Critter("Peter the Rabbit", 9, 2.5);
+        var cat = new Critter("Snowball the Cat", 7, 3.75);
+        var fish = new Critter("Roger the Fish", 0.1, 9.5);
+        var turtle = new Critter("Myrtle the Snapping-Turtle", 3, 9);
+
+        while (rabbit.position <= 60 && cat.position <= 60 && fish.position <= 60 && turtle.position <= 60) {
+          rabbit.race();
+          cat.race();
+          fish.race();
+          turtle.race();
+        }
+
+        console.log(rabbit.name + "'s position is " + rabbit.position);
+        console.log(cat.name + "'s position is " + cat.position);
+        console.log(fish.name + "'s position is " + fish.position);
+        console.log(turtle.name + "'s position is " + turtle.position);
+        console.log("How thrilling!");
+
+        if (rabbit.position > cat.position && rabbit.position > fish.position && rabbit.position > turtle.position) {
+          console.log(rabbit.name + " won the big critter-race!")
+        }
+        else if (cat.position > rabbit.position && cat.position > fish.position && cat.position > turtle.position) {
+          console.log(cat.name + " won the big critter-race!")
+        }
+        else if (fish.position > rabbit.position && fish.position > cat.position && fish.position > turtle.position) {
+          console.log(fish.name + " won the big critter-race!")
+        }
+        else {
+          console.log(turtle.name + " won the big critter-race!")
+        }
+
+      });
+    </script>
+  </body>
+</html>
