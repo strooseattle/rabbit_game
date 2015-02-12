@@ -32,10 +32,10 @@
           turtle.race();
         }
 
-        console.log(rabbit.name + "'s position is " + rabbit.position);
-        console.log(cat.name + "'s position is " + cat.position);
-        console.log(fish.name + "'s position is " + fish.position);
-        console.log(turtle.name + "'s position is " + turtle.position);
+        console.log(rabbit.name + "'s position is " + rabbit.position.toFixed(2));
+        console.log(cat.name + "'s position is " + cat.position.toFixed(2));
+        console.log(fish.name + "'s position is " + fish.position.toFixed(2));
+        console.log(turtle.name + "'s position is " + turtle.position.toFixed(2));
         console.log("How thrilling!");
 
         if (rabbit.position > cat.position && rabbit.position > fish.position && rabbit.position > turtle.position) {
